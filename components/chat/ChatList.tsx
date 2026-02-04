@@ -141,9 +141,8 @@ export default function ChatList({
         <motion.button
           key={chat.id}
           onClick={() => onSelectChat(chat.id)}
-          className={`w-full border-b border-gray-100 p-4 text-left transition hover:bg-gray-50 ${
-            selectedChatId === chat.id ? "bg-blue-50" : ""
-          }`}
+          className={`w-full border-b border-gray-100 p-4 text-left transition hover:bg-gray-50 ${selectedChatId === chat.id ? "bg-blue-50" : ""
+            }`}
           whileHover={{ x: 2 }}
         >
           <div className="flex items-start justify-between gap-2">
@@ -152,9 +151,9 @@ export default function ChatList({
                 <p className="font-semibold text-gray-900 truncate">
                   {chat.pasien_name || "Pasien"}
                 </p>
-                {chat.unread_count > 0 && (
+                {(chat.unread_count || 0) > 0 && (
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white">
-                    {chat.unread_count > 9 ? "9+" : chat.unread_count}
+                    {(chat.unread_count || 0) > 9 ? "9+" : chat.unread_count}
                   </span>
                 )}
               </div>

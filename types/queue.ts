@@ -14,5 +14,6 @@ export interface Queue {
   status: QueueStatus;
   is_current: boolean;
   created_at: string;
+  print_count?: number;
 }
 

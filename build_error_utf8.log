@@ -1,0 +1,80 @@
+﻿
+> antrian-tiket@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 16.8s
+  Running TypeScript ...
+node.exe : Failed 
+to compile.
+At line:1 char:1
++ & "C:\Program Fil
+es\nodejs/node.exe"
+ "C:\Program Files\
+nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+    + CategoryInfo 
+             : No  
+  tSpecified: (F   
+ ailed to compi    
+le.:String) []    
+, RemoteExcept    
+ion
+    + FullyQualifi 
+   edErrorId : Na  
+  tiveCommandErr   
+ or
+ 
+
+./app/petugas/page.
+tsx:645:11
+Type error: Type 'D
+ispatch<SetStateAct
+ion<StaffView>>' 
+is not assignable 
+to type '(view: 
+string) => void'.
+  Types of 
+parameters 'value' 
+and 'view' are 
+incompatible.
+    Type 'string' 
+is not assignable 
+to type 'SetStateAc
+tion<StaffView>'.
+
+[0m [90m 643 
+|[39m         [33
+m<[39m[33mDashboa
+rdSidebar[39m
+ [90m 644 |[39m  
+         activeView
+[33m=[39m{activeV
+iew}
+[31m[1m>[22m[39
+m[90m 645 |[39m  
+         onViewChan
+ge[33m=[39m{setAc
+tiveView}
+ [90m     |[39m  
+         [31m[1m^
+[22m[39m
+ [90m 646 |[39m  
+         onLogout[
+33m=[39m{handleLog
+out}
+ [90m 647 |[39m  
+       [33m/[39m
+[33m>[39m
+ [90m 648 
+|[39m[0m
+Next.js build 
+worker exited with 
+code: 1 and 
+signal: null

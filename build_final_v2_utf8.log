@@ -1,0 +1,77 @@
+﻿
+> antrian-tiket@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 11.0s
+  Running TypeScript ...
+node.exe : Failed 
+to compile.
+At line:1 char:1
++ & "C:\Program Fil
+es\nodejs/node.exe"
+ "C:\Program Files\
+nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+    + CategoryInfo 
+             : No  
+  tSpecified: (F   
+ ailed to compi    
+le.:String) []    
+, RemoteExcept    
+ion
+    + FullyQualifi 
+   edErrorId : Na  
+  tiveCommandErr   
+ or
+ 
+
+./components/dashbo
+ard/DashboardView.t
+sx:134:32
+Type error: 
+'percent' is 
+possibly 
+'undefined'.
+
+[0m [90m 132 
+|[39m             
+    labelLine[33m=
+[39m{[36mfalse[3
+9m}
+ [90m 133 |[39m  
+               labe
+l[33m=[39m{({ 
+name[33m,[39m 
+percent }) 
+[33m=>[39m
+[31m[1m>[22m[39
+m[90m 134 |[39m  
+                 
+[32m`${name}: 
+${(percent * 100).t
+oFixed(0)}%`[39m
+ [90m     |[39m  
+                   
+           [31m[1
+m^[22m[39m
+ [90m 135 |[39m  
+               }
+ [90m 136 |[39m  
+               oute
+rRadius[33m=[39m{
+[35m100[39m}
+ [90m 137 |[39m  
+               fill
+[33m=[39m[32m"#8
+884d8"[39m[0m
+Next.js build 
+worker exited with 
+code: 1 and 
+signal: null

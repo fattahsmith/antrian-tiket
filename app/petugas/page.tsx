@@ -637,12 +637,16 @@ export default function PetugasPage() {
   );
 
 
+  const handleViewChange = (view: string) => {
+    setActiveView(view as StaffView);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="flex min-h-screen">
         <DashboardSidebar
           activeView={activeView}
-          onViewChange={setActiveView}
+          onViewChange={handleViewChange}
           onLogout={handleLogout}
         />
 
