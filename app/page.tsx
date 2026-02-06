@@ -11,10 +11,14 @@ import Doctors from '@/components/Doctors';
 import Testimonials from '@/components/Testimonials';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import SplashCursor from '@/components/SplashCursor';
 
 export default function Home() {
+  
+  
   return (
-    <main className="relative">
+    <main className="relative overflow-hidden">
+      <SplashCursor />
       <Navbar />
       <Hero />
       <FloatingAIChat />
@@ -29,3 +33,5 @@ export default function Home() {
     </main>
   );
 }
+
+

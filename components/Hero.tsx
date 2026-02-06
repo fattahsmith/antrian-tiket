@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Star, ShieldCheck } from 'lucide-react';
+import CountUp from './CountUp'
 
 export default function Hero() {
   const marqueeItems = [
@@ -89,12 +90,26 @@ export default function Hero() {
             {/* Trust Stats */}
             <div className="flex items-center gap-8 mb-3  ">
               <div>
-                <h4 className="text-3xl font-bold text-slate-900">10k+</h4>
+                <h4 className="text-3xl font-bold text-slate-900"><CountUp
+                  from={0}
+                  to={1000}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                />+</h4>
                 <p className="text-sm text-slate-500">Pasien Terlayani</p>
               </div>
               <div className="w-px h-10 bg-slate-300" />
               <div>
-                <h4 className="text-3xl font-bold text-slate-900">4.9</h4>
+                <h4 className="text-3xl font-bold text-slate-900"><CountUp
+                  from={0}
+                  to={4.9}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                /></h4>
                 <p className="text-sm text-slate-500 flex items-center gap-1">
                   Rating Kepuasan <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
                 </p>
