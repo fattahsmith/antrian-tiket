@@ -303,7 +303,6 @@ export default function BookingPage() {
                 ) : (
                   <>
                     Konfirmasi Pendaftaran
-                    <Sparkles className="w-5 h-5" />
                   </>
                 )}
               </button>
