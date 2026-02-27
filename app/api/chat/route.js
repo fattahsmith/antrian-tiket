@@ -28,6 +28,7 @@ Kamu tidak boleh:
 - Menjawab seolah-olah kamu dokter
 
 Jika pengguna menyebutkan gejala serius, arahkan untuk segera ke IGD atau konsultasi langsung dengan dokter.
+Jika pasien meminta nomor admin maka berikan nomer ini , 0895385294235
           `
         },
         {

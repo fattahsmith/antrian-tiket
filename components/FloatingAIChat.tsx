@@ -248,7 +248,7 @@ export default function FloatingAIChat() {
                   <button
                     onClick={sendMessage}
                     disabled={loading || !input.trim()}
-                    className="absolute right-2 h-9 w-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:scale-105 transition-all"
+                    className="absolute right-2 h-9 w-9 rounded-full bg-blue-700 text-white flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:scale-105 transition-all"
                     aria-label="Send message"
                   >
                     {loading ? (

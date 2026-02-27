@@ -124,3 +124,9 @@ export async function createDoctor(payload: {
 
     return { error: null };
 }
+
+export async function deleteDoctors(id: number): Promise<{ error: any }> {
+  const { error } = await supabase.from('doctors').delete().eq('id', id);
+
+  return { error };
+}
