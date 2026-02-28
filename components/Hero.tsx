@@ -88,7 +88,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Trust Stats */}
-            <div className="flex items-center gap-8 mb-3  ">
+            <div className="flex items-center gap-8 mb-10">
               <div>
                 <h4 className="text-3xl font-bold text-slate-900"><CountUp
                   from={0}
@@ -170,10 +170,10 @@ export default function Hero() {
       </div>
 
       {/* Modern Marquee Footer */}
-      <div className="absolute bottom-0 w-full bg-white/50 backdrop-blur-md border-t border-white/40 py-6 overflow-hidden">
+      <div className="absolute bottom-0 w-full bg-white/50 backdrop-blur-md border-t border-white/40 py-6 overflow-hidden ">
         <div className="flex animate-marquee whitespace-nowrap">
           {marqueeItems.map((item, i) => (
-            <div key={i} className="flex items-center mx-8 group cursor-default">
+            <div key={i} className="flex items-center mx-8  group cursor-default">
               <span className="w-2 h-2 rounded-full bg-blue-400 mr-3 group-hover:bg-blue-600 transition-colors" />
               <span className="text-slate-600 font-medium text-lg tracking-wide group-hover:text-blue-700 transition-colors">
                 {item}

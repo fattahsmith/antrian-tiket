@@ -57,7 +57,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="absolute -bottom-10 -right-4 lg:-right-10 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-20 group"
+                className="absolute -bottom-1 -right-4 lg:-right-10 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-20 group "
               >
                 <Image
                   src="/kumdoc2.jpg"

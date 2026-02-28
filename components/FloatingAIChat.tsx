@@ -56,9 +56,8 @@ export default function FloatingAIChat() {
         ...prev,
         {
           role: "bot",
-          text: `❌ Error: Gagal terhubung ke server. ${
-            err instanceof Error ? err.message : "Unknown error"
-          }`,
+          text: `❌ Error: Gagal terhubung ke server. ${err instanceof Error ? err.message : "Unknown error"
+            }`,
         },
       ]);
     } finally {
@@ -76,10 +75,10 @@ export default function FloatingAIChat() {
   return (
     <>
       {/* Floating Button */}
-     
-     
+
+
       <motion.button
-      
+
         onClick={() => setIsOpen(true)}
         className="fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full bg-white flex items-center justify-center text-white"
         whileHover={{ scale: 1.1 }}
@@ -99,19 +98,21 @@ export default function FloatingAIChat() {
           },
         }}
         aria-label="Open AI Chat"
-      > <div className="absolute inset-0 flex items-center justify-center mb-7 ml-9 ">
-      <h2 className="text-white text-xs font-bold bg-blue-600 rounded-full px-1 py-1">
-        AI
-      </h2>
-    </div>
-         <Image
-      src="/logo.png"
-      alt="kumdoc"
-      width={700}
-      height={200}
-      className="rounded-xl"
-      priority
-    />
+      >
+         <div className="absolute inset-0 flex items-center justify-center mb-7 ml-9 ">
+          <h2 className="text-white text-xs font-bold bg-blue-600 rounded-full px-1 py-1">
+            AI
+          </h2>
+        </div>
+        <Image
+          src="/logo.png"
+          alt="kumdoc"
+          width={700}
+          height={200}
+          className="rounded-xl"
+          priority
+        />
+
       </motion.button>
 
       {/* Chat Modal */}
@@ -139,11 +140,11 @@ export default function FloatingAIChat() {
               <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900  px-6 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded-full bg-white backdrop-blur-md flex items-center justify-center">
-                  <Image
-                    src="/logo.png"
-                    width={40}
-                    height={40}
-                    alt="Logo"
+                    <Image
+                      src="/logo.png"
+                      width={40}
+                      height={40}
+                      alt="Logo"
                     />
                   </div>
                   <div>
@@ -175,16 +176,14 @@ export default function FloatingAIChat() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className={`flex ${
-                      msg.role === "user" ? "justify-end" : "justify-start"
-                    }`}
+                    className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"
+                      }`}
                   >
                     <div
-                      className={`max-w-[85%] rounded-2xl px-4 py-3 ${
-                        msg.role === "user"
+                      className={`max-w-[85%] rounded-2xl px-4 py-3 ${msg.role === "user"
                           ? "bg-blue-500 text-white rounded-br-md"
                           : "bg-gray-100 text-gray-800 rounded-bl-md"
-                      }`}
+                        }`}
                     >
                       <p className="text-sm leading-relaxed whitespace-pre-wrap">
                         {msg.text}

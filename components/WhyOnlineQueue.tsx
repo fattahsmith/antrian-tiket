@@ -147,7 +147,7 @@ export default function WhyOnlineQueue() {
             <h2 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-tight tracking-tight text-gray-900">
               Kenapa Harus{' '}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent">
+                <span className="bg-blue-600 bg-clip-text text-transparent">
                   Antrian Online?
                 </span>
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" />

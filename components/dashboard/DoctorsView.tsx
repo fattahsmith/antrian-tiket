@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
-import { fetchDoctors, updateDoctorStatus, } from '@/lib/doctorUtils';
+import { fetchDoctors, updateDoctorStatus, deleteDoctors } from '@/lib/doctorUtils';
 import { Doctor, DoctorStatus } from '@/types/doctor';
-import { Stethoscope, Clock, CircleDot, User, Coffee, Plus } from 'lucide-react';
+import { Stethoscope, Clock, CircleDot, User, Coffee, Plus, Trash2 } from 'lucide-react';
 import AddDoctorModal from './AddDoctorModal';
 
 export default function DoctorsView() {
@@ -53,6 +53,29 @@ export default function DoctorsView() {
             // Revert on error
             console.error('Failed to update status', error);
             loadDoctors();
+        } finally {
+            setActionLoading(null);
+        }
+    };
+
+    const handleDelete = async (doctorId: string, doctorName: string) => {
+        if (!confirm(`Apakah Anda yakin ingin menghapus dokter ${doctorName}?`)) {
+            return;
+        }
+
+        setActionLoading(`delete-${doctorId}`);
+        try {
+            const { error } = await deleteDoctors(doctorId);
+            if (error) {
+                alert('Gagal menghapus dokter. Silakan coba lagi.');
+                console.error('Error deleting doctor:', error);
+            } else {
+                // Remove optimistically or reload
+                loadDoctors();
+            }
+        } catch (err) {
+            alert('Terjadi kesalahan. Silakan coba lagi.');
+            console.error('Error:', err);
         } finally {
             setActionLoading(null);
         }
@@ -133,12 +156,26 @@ export default function DoctorsView() {
                                         </p>
                                     </div>
                                 </div>
-                                <div className={`px-2.5 py-1 rounded-full text-xs font-bold border flex items-center gap-1.5 ${getStatusColor(doctor.status)}`}>
-                                    <div className={`w-1.5 h-1.5 rounded-full ${doctor.status === 'practice' ? 'bg-emerald-500 animate-pulse' :
-                                        doctor.status === 'online' ? 'bg-blue-500' :
-                                            doctor.status === 'cuti' ? 'bg-amber-500' : 'bg-slate-400'
-                                        }`} />
-                                    {getStatusLabel(doctor.status)}
+                                <div className="flex flex-col items-end gap-2">
+                                    <div className={`px-2.5 py-1 rounded-full text-xs font-bold border flex items-center gap-1.5 shadow-sm ${getStatusColor(doctor.status)}`}>
+                                        <div className={`w-1.5 h-1.5 rounded-full ${doctor.status === 'practice' ? 'bg-emerald-500 animate-pulse' :
+                                            doctor.status === 'online' ? 'bg-blue-500' :
+                                                doctor.status === 'cuti' ? 'bg-amber-500' : 'bg-slate-400'
+                                            }`} />
+                                        {getStatusLabel(doctor.status)}
+                                    </div>
+                                    <button
+                                        onClick={() => handleDelete(doctor.id, doctor.profiles?.name || 'ini')}
+                                        disabled={actionLoading === `delete-${doctor.id}`}
+                                        className="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors border border-transparent hover:border-red-100"
+                                        title="Hapus Dokter"
+                                    >
+                                        {actionLoading === `delete-${doctor.id}` ? (
+                                            <div className="h-4 w-4 animate-spin rounded-full border-2 border-red-500 border-t-transparent"></div>
+                                        ) : (
+                                            <Trash2 size={16} />
+                                        )}
+                                    </button>
                                 </div>
                             </div>
 
@@ -218,6 +255,6 @@ export default function DoctorsView() {
                     loadDoctors();
                 }}
             />
-        </div>
+        </div >
     );
 }

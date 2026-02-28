@@ -189,8 +189,14 @@ export default function Navbar() {
               {/* Drawer Header */}
               <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-400/30">
-                    <Stethoscope className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-blue-400/30">
+                    <Image
+                      src="/logo.png"
+                      width={32}
+                      height={32}
+                      alt="RS Kita Logo"
+                      className="w-8 h-8 object-contain"
+                    />
                   </div>
                   <div>
                     <p className="font-extrabold text-slate-900 text-base leading-tight">RS Kita</p>
