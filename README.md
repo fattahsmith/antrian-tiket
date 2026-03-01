@@ -11,7 +11,7 @@ Aplikasi web antrian online untuk rumah sakit menggunakan Next.js dan Supabase.
 ## Kredensial Login Petugas
 
 - **Username**: `petugas`
-- **Password**: `123456`
+- **Password**: ``
 ## Tech Stack
 
 - **Frontend**: Next.js 16, React 19, TypeScript
